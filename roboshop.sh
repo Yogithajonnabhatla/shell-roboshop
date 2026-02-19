@@ -26,10 +26,10 @@ else
     IP=$(
  aws ec2 describe-instances \
  --instance-ids $instance_id \
- --query 'Reseravtions[].Instances[].PrivateIpAddress' \
+ --query 'Reservations[].Instances[].PrivateIpAddress' \
  --output text 
  )
- 
+
  fi
 
  echo "IP Address: $IP"
