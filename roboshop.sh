@@ -16,18 +16,20 @@ do
     --output text )
 
     if [ $instance == "frontend" ];then
-IP=$(
- aws ec2 describe-instances \
- --instance-ids $instance_id \
- --query 'Reseravtions[].Instances[].PublicIpAddress' \
- --output text
+       IP=$(
+            aws ec2 describe-instances \
+             --instance-ids $instance_id \
+                --query 'Reseravtions[].Instances[].PublicIpAddress' \
+                --output text
 )
 else
     IP=$(
  aws ec2 describe-instances \
  --instance-ids $instance_id \
  --query 'Reseravtions[].Instances[].PrivateIpAddress' \
- --output text )
+ --output text 
+ )
+ 
  fi
 
  echo "IP Address: $IP"
