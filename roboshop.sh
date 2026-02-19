@@ -29,5 +29,7 @@ else
  --query 'Reseravtions[].Instances[].PrivateIpAddress' \
  --output text )
  fi
+
+ echo "IP Address: $IP"
 done
 
